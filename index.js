@@ -37,6 +37,13 @@ app.get("/home", (req, res) => {
     });
 });
 
+// About route that renders the about.ejs file
+app.get("/about", (req, res) => {
+    res.render("about", {
+        title: "About CyberSafe"
+    });
+});
+
 // Start the server
 app.listen(port, () => {
     console.log("Listening on port: " + port);
