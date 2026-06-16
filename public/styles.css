@@ -1,0 +1,11 @@
+/* Basic page styling for the CyberSafe Express App */
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: black;
+    margin: 30px;
+}
+
+h1 {
+    color: darkblue;
+}
