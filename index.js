@@ -52,7 +52,14 @@ app.post("/submit", (req, res) => {
     console.log("POST route");
     console.log(req.body);
 
-    res.send("Form submitted successfully!"); // Office hours - check the terminal to see the message
+    // res.send("Form submitted successfully!"); - Office hours - check the terminal to see the message
+
+    // Send the form information to the success page so it can be displayed
+    res.render("success", {
+        title: "Form Submitted",
+        name: req.body.name,
+        concern: req.body.concern
+    });
 });
 
 // Start the server

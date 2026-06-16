@@ -6,6 +6,6 @@ body {
     margin: 30px;
 }
 
-h1 {
+h1, h2 {
     color: darkblue;
 }
