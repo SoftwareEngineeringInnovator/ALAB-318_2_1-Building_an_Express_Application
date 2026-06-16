@@ -18,7 +18,7 @@ app.use(express.urlencoded());
 // Set EJS
 app.set("view engine", "ejs");
 
-// Middleware that logs basic information about every request
+// Middleware logs basic information about every request
 app.use((req, res, next) => {
     const requestTime = new Date().toLocaleTimeString();
 
