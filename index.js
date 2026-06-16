@@ -12,6 +12,9 @@ const port = 3000;
 // Files from the public folder: CSS
 app.use(express.static("public"));
 
+// Turn form data into something we can we can work with inside body/req.body
+app.use(express.urlencoded());
+
 // Set EJS
 app.set("view engine", "ejs");
 
@@ -42,6 +45,14 @@ app.get("/about", (req, res) => {
     res.render("about", {
         title: "About CyberSafe"
     });
+});
+
+// POST route for the form - created in the About page
+app.post("/submit", (req, res) => {
+    console.log("POST route");
+    console.log(req.body);
+
+    res.send("Form submitted successfully!"); // Office hours - check the terminal to see the message
 });
 
 // Start the server

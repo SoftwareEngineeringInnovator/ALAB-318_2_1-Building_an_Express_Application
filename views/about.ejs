@@ -16,6 +16,7 @@
         <a href="/about">About</a>
     </nav>
 
+    <!-- paragrahp section to provide information in the About page -->
     <p>
         CyberSafe is a small Express application created to practice
         routes, EJS views, middleware, static files, forms, and downloads.
@@ -25,5 +26,23 @@
         The topic of this app is cybersecurity because learning how to build
         secure web applications starts with understanding basic security habits.
     </p>
+
+    <!-- Form section to create send Post request -->
+    <h2>Security Question Form</h2>
+
+<form action="/submit" method="POST">
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text">
+
+    <br><br>
+
+    <label for="concern">Cybersecurity Concern:</label>
+    <input id="concern" name="concern" type="text">
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
 </body>
 </html>
