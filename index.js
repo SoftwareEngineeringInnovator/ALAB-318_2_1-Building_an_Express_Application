@@ -23,8 +23,13 @@ let cyberTips = [
     "Keep your software updated."
 ];
 
-// Home route that renders the index.ejs file
+// Route that redirects the user to the home page
 app.get("/", (req, res) => {
+    res.redirect("/home");
+});
+
+// Home route that renders the index.ejs file
+app.get("/home", (req, res) => {
     res.render("index", {
         title: "CyberSafe Express App",
         message: "Welcome to CyberSafe Express App",
