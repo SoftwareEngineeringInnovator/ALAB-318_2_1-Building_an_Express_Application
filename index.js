@@ -18,6 +18,17 @@ app.use(express.urlencoded());
 // Set EJS
 app.set("view engine", "ejs");
 
+// Middleware that logs basic information about every request
+app.use((req, res, next) => {
+    const requestTime = new Date().toLocaleTimeString();
+
+    console.log("Request Method:", req.method);
+    console.log("Request URL:", req.url);
+    console.log("Request Time:", requestTime);
+
+    next();
+});
+
 // Cybersecurity tips data that will be sent to the EJS view
 let cyberTips = [
     "Use strong passwords.",
