@@ -3,6 +3,16 @@
 // Import express to create the server
 import express from "express";
 
+// Import path to create the file path for downloads
+import path from "path";
+
+// Import fileURLToPath to create dirname when using ES Modules
+import { fileURLToPath } from "url";
+
+// Create filename and dirname
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+
 // Create Express application
 const app = express();
 
@@ -65,6 +75,13 @@ app.get("/tips/:topic", (req, res) => {
         topic: req.params.topic
     });
 });
+
+// Download route so users can download the LinkedIn image
+app.get("/download", (req, res) => {
+    const filePath = path.join(dirname, "public", "images", "LinkedIn_Banner1.png");
+
+    res.download(filePath, "LinkedIn_Banner1.png");
+})
 
 // POST route for the form - created in the About page
 app.post("/submit", (req, res) => {
