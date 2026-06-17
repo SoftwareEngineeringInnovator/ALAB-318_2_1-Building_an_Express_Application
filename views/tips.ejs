@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Cybersecurity Tips</h1>
+
+    <nav>
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/tips/passwords">Password Tips</a>
+        <a href="/tips/phishing">Phishing Tips</a>
+        <a href="/tips/malware">Malware Tips</a>
+    </nav>
+
+    <!-- Use if/esle statment statement to evaluate the below conditions using route tip/topics from index.js (app.get("/tips/:topic", (req, res)) -->
+    <h2>Topic: <%= topic %></h2>
+
+    <% if (topic === "passwords") { %>
+        <p>
+            Passwords should be long, unique, and hard to guess.
+            It is also a good idea to use multi-factor authentication.
+        </p>
+    <% } else if (topic === "phishing") { %>
+        <p>
+            Phishing attacks try to trick people into clicking fake links
+            or sharing private information.
+        </p>
+    <% } else if (topic === "malware") { %>
+        <p>
+            Malware is harmful software. Keep your system updated and avoid
+            downloading files from unknown sources.
+        </p>
+    <% } else { %>
+        <p>
+            This is a general cybersecurity topic. Stay alert, keep learning,
+            and practice safe habits online.
+        </p>
+    <% } %>
+</body>
+</html>

@@ -58,6 +58,14 @@ app.get("/about", (req, res) => {
     });
 });
 
+// Tips route that renders tip/topics by evaluating if/else statement from tips.ejs page
+app.get("/tips/:topic", (req, res) => {
+    res.render("tips", {
+        title: "Cybersecurity Tips",
+        topic: req.params.topic
+    });
+});
+
 // POST route for the form - created in the About page
 app.post("/submit", (req, res) => {
     console.log("POST route");
